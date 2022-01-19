@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Element</title>
+    <style>
+      *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+        all: unset;
+        display: revert;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        font-weight: 300;
+        background-color: rgb(242, 242, 242);
+        margin: 20px 0;
+      }
+      h1 {
+        text-align: center;
+        font-size: 20px;
+        max-width: min(1200px, 96vw);
+        margin: auto;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      code {
+        font-family: monospace;
+        font-size: 18px;
+        background-color: beige;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+      .section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-evenly;
+        margin: 60px auto 20px;
+        width: min(1200px, 92vw);
+      }
+
+      .btn {
+        font-size: 20px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 10px 40px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+      }
+      .btn--tomato {
+        background-color: tomato;
+      }
+      .btn--purple {
+        background-color: purple;
+      }
+      .btn--brown {
+        background-color: brown;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 16px;
+        margin-bottom: 16px;
+        width: min(360px, 98vw);
+        display: grid;
+        gap: 10px;
+      }
+      .card__content:empty {
+        --color: rgb(199, 199, 199);
+        --width: 100%;
+        --width-line: 250px;
+        --height-rectangle: 150px;
+        --height-line: 24px;
+        --gutter: 10px;
+        --computed-circle-rad: calc(var(--height-line) * 0.5);
+        --computed-height: calc(
+          var(--height-rectangle) + var(--gutter) + var(--height-line) +
+            calc(1.5 * var(--gutter))
+        );
+        height: var(--computed-height);
+        background-image: linear-gradient(0.9turn, #fff, transparent),
+          linear-gradient(var(--color), var(--color)),
+          radial-gradient(
+            var(--height-line) circle at var(--computed-circle-rad)
+              var(--computed-circle-rad),
+            var(--color) 50%,
+            transparent 50%
+          ),
+          linear-gradient(var(--color), var(--color));
+        background-size: var(--width) var(--computed-height),
+          var(--width) var(--height-rectangle),
+          var(--height-line) var(--height-line),
+          var(--width-line) var(--height-line);
+        background-position: var(--width) 0, 0 0,
+          0px calc(var(--height-rectangle) + var(--gutter)),
+          calc(var(--height-line) + var(--gutter))
+            calc(var(--height-rectangle) + var(--gutter));
+        background-repeat: no-repeat;
+      }
+    </style>
+    <script src="src/js/canvas/script.js" defer></script>
+  </head>
+  <body>
+    <canvas-draw particles="90" max-distance-join-particles="80"></canvas-draw>
+    <h1>
+      Safari decides not to support Web components
+      <br />
+      Edit attribute <code>particles</code> and
+      <code>max-distance-join-particles</code>
+      <br />
+      Caution with values of <code>particles > 150</code> and
+      <code>max-distance-join-particles > 150</code>
+      <br />
+      This is Canvas with <code>requestAnimationFrame</code>
+    </h1>
+    <section class="section">
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--tomato" type="button">
+          Tomato
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--purple" type="button">
+          Purple
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--brown" type="button">Brown</button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--tomato" type="button">
+          Tomato
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--purple" type="button">
+          Purple
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--brown" type="button">Brown</button>
+      </article>
+    </section>
+  </body>
+</html>
