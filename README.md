@@ -124,10 +124,6 @@ class CanvasDraw extends HTMLElement {
     }
   }
 
-  constructor() {
-    super();
-    //...
-  }
   //...
 }
 ```
