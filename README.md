@@ -292,6 +292,16 @@ class CanvasDraw extends HTMLElement {
 }
 ```
 
+## Uso del WebComponente
+
+Al inicio comentamos cual sería el nombre de la clases, y que además, podemos usar dos atributos para cambiar la cantidad de partículas y la distancia máxima para que se unan mediante una línea, esto es:
+
+```html
+<canvas-draw particles="90" max-distance-join-particles="80"></canvas-draw>
+```
+
+Si vas a cambiar los valores de atributo, ten cuidado, ya que podría consumir muchos recursos. Recomiendo no subir los valores por encima de de 150
+
 ## Codepen del WebComponent
 
 En este PEN puede verse el <a href="https://codepen.io/ivan_albizu/pen/LYzvxqz" target="_blank" rel="noopener">WebComponente funcionando</a>
